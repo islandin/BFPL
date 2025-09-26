@@ -11,7 +11,7 @@
     let directLineUrl = null;
 
     // Replace with your token endpoint
-    const tokenEndpoint = "FimevKmnXnNXElJkD5XN41WCOA4IoSgZ4GS14EnJW8UyqDpRX5a6JQQJ99BIAC5T7U2AArohAAABAZBS1vsd.G0wR81rRCdEUKXiv2Ve2aX8sogoxh4KS5cWSjzqGDHlaUDgu1NPxJQQJ99BIAC5T7U2AArohAAABAZBS314i";
+    const tokenEndpoint = "https://e1f5963c8d45e248bd39acc0b1cd7b.eb.environment.api.powerplatform.com/powervirtualagents/botsbyschema/cr3e5_brookfieldPlaceAssistant_RpvI4M/directline/token?api-version=2022-03-01-preview";
     const styleOptions = {"accent":"#0078D4","autoScrollSnapOnPage":true,"autoScrollSnapOnPageOffset":0,"avatarBorderRadius":"7%","avatarSize":31,"backgroundColor":"#e8e9eb","botAvatarBackgroundColor":"#ffffff00","botAvatarImage":"https://powercatexternal.blob.core.windows.net/creatorkit/Assets/ChatbotLogoBlue.png","botAvatarInitials":"B","bubbleAttachmentMaxWidth":480,"bubbleAttachmentMinWidth":250,"bubbleBackground":"#f0eded","bubbleBorderColor":"#f5f5f5","bubbleBorderRadius":41,"bubbleBorderStyle":"solid","bubbleBorderWidth":1,"bubbleFromUserBackground":"#ebefff","bubbleFromUserBorderColor":"#f5f5f5","bubbleFromUserBorderRadius":41,"bubbleFromUserBorderStyle":"solid","bubbleFromUserBorderWidth":1,"bubbleFromUserNubOffset":0,"bubbleFromUserNubSize":0,"bubbleFromUserTextColor":"#242424","bubbleImageHeight":10,"bubbleImageMaxHeight":240,"bubbleImageMinHeight":240,"bubbleMessageMaxWidth":480,"bubbleMessageMinWidth":120,"bubbleMinHeight":50,"bubbleNubOffset":0,"bubbleTextColor":"#242424","emojiSet":true,"fontSizeSmall":"70%","hideUploadButton":false,"messageActivityWordBreak":"break-word","monospaceFont":"Consolas","paddingRegular":10,"paddingWide":10,"primaryFont":null,"sendBoxBackground":"#e8e9eb","sendBoxBorderTop":"solid 1px #808080","sendBoxButtonColor":"#0078d4","sendBoxButtonColorOnHover":"#006cbe","sendBoxButtonShadeBorderRadius":40,"sendBoxButtonShadeColorOnHover":"","sendBoxHeight":60,"sendBoxPlaceholderColor":"#171616","sendBoxTextColor":"#2e2d2d","showAvatarInGroup":"status","spinnerAnimationHeight":16,"spinnerAnimationPadding":12,"spinnerAnimationWidth":16,"subtleColor":"#000000FF","suggestedActionBackgroundColor":"#006FC4FF","suggestedActionBackgroundColorOnHover":"#0078D4","suggestedActionBorderColor":"","suggestedActionBorderRadius":10,"suggestedActionBorderWidth":1,"suggestedActionLayout":"flow","suggestedActionTextColor":"#FFFFFFFF","typingAnimationBackgroundImage":"url('https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif')","typingAnimationDuration":5000,"typingAnimationHeight":20,"typingAnimationWidth":64,"userAvatarBackgroundColor":"#222222","userAvatarImage":"https://avatars.githubusercontent.com/u/8174072?v=4&size=64","userAvatarInitials":"U"};
     const backgroundImage = "";
     document.addEventListener('DOMContentLoaded', () => {
@@ -143,7 +143,7 @@
     :root {
       --primary-gradient: var(--primary-color);
       --chat-width: 450px;
-      --chat-height: 520px;
+      --chat-height: 750px;
       --header-height: 56px;
       --border-radius: 16px;
       --transition-speed: 0.3s;
@@ -156,8 +156,15 @@
         Roboto, sans-serif;
     }
     body {
+      /* min-height: 100vh;
+      background-color: #f3f4f6; */
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
       min-height: 100vh;
-      background-color: #f3f4f6;
     }
     #chatbot-popup {
       display: none;
@@ -390,48 +397,27 @@
         right: 0;
         border-radius: 0;
       }
+      #page-screenshot {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    .webchat__upload-button {
+        display: none !important;
     }
   </style>
 </head>
 <body>
+  <img id="page-screenshot" src="screenshot.png" alt="Website Screenshot">
   <div class="main-content">
-    <h1>Header</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
-    <div class="content-grid">
-      <div class="content-box featured">
-        <h2>Featured Content</h2>
-        <p>Primary content area with custom styling and gradient background</p>
-      </div>
-      <div class="content-box">
-        <h2>Section One</h2>
-        <p>Content box with minimal design</p>
-      </div>
-      <div class="content-box">
-        <h2>Section Two</h2>
-        <p>Another content section with consistent styling</p>
-      </div>
-    </div>
+
+    
   </div>
   <div id="chatbot-popup" role="complementary" aria-label="Chat Assistant">
     <div id="chatbot-header">
       <div class="header-title">
-        <svg
-          class="chat-icon"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-        >
-          <path
-            d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-          ></path>
-        </svg>
-        <span>Contoso Assistant</span>
+        <span>
+            <span style="font-size: 28px;">🤖</span> Brookfield Place Assistant</span>
       </div>
       <div class="header-buttons">
         <button
